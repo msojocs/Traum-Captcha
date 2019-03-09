@@ -4,7 +4,7 @@
     Plugin URI: https://www.jysafe.cn/3571.air
     Description: 化学验证码，历史验证码，矩阵验证码
     Author: Traum
-    Version: 1.0
+    Version: 1.0.1
     Author URI: https://www.jysafe.cn
     */
 ?>

@@ -1,3 +1,6 @@
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 插件目的
 ----
 在注册表单处显示一个验证码
