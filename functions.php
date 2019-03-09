@@ -4,7 +4,7 @@
     Plugin URI: https://www.jysafe.cn/3571.air
     Description: 化学验证码，历史验证码，矩阵验证码
     Author: Traum
-    Version: 1.0 
+    Version: 1.0
     Author URI: https://www.jysafe.cn
     */
 ?>
@@ -84,7 +84,8 @@ function add_security_question() {
         </div>
     </p>
     <br />
-    <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+    <script src="<?php echo plugin_dir_url(__FILE__);
+        ?>/assets/js/jquery-2.0.3.min.js"></script>
     <script>
         function change() {
             r = Math.random();
@@ -117,10 +118,29 @@ add_action('register_form', 'add_security_question');
 
 //检验输入的验证码是否正确
 function Traum_Captcha_add_security_question_validate($sanitized_user_login, $user_email, $errors) {
-    if ($_POST['vcode1'] == $_SESSION['Checknum'] || $_POST['vcode2'] == $_SESSION['Checknum'] || $_POST['vcode3'] == $_SESSION['Checknum']) {
-        //wp_die('正确');
-        //return $errors->add('prooffail', '<strong>正确</strong>答案：');
-    } else {
+
+    /*
+    eregi('[0-9]', $str) //数字
+eregi('[a-zA-Z]', $str)//英文
+*/
+
+    if (!empty($_POST['vcode1'])) {
+        $vcode = $_POST['vcode1'];
+
+    } else if (!empty($_POST['vcode2'])) {
+        $vcode = $_POST['vcode2'];
+
+    } else if (!empty($_POST['vcode3'])) {
+        $vcode = $_POST['vcode3'];
+
+    }
+
+    $regex = '/^[0-9a-zA-Z]+$/i';
+    if (!preg_match($regex, $vcode)) {
+        wp_die('非法字符');
+    }
+
+    if ($_POST['vcode1'] != $_SESSION['Checknum'] && $_POST['vcode2'] != $_SESSION['Checknum'] && $_POST['vcode3'] != $_SESSION['Checknum']) {
         return $errors->add('prooffail', '<strong>错误</strong>: 您的回答不正确。');
 
     }
@@ -136,7 +156,7 @@ function traum_captcha() {
     $traum_captcha = new Traum_captcha();
     $captcha_type = $_GET['Captcha_type'];
     $traum_captcha -> $captcha_type();
-    echo $captcha_type;
+    //echo $captcha_type;
     exit;
 }
 
