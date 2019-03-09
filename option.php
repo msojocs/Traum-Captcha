@@ -1,9 +1,14 @@
 <?php
 defined('ABSPATH') or exit;
-$install = isset($_POST["install"])?$_POST["install"]:1;
-if ($install == 'true') {
+
+if(!is_user_logged_in())//检测是否登录
+ {
+ return false;
+ }
+ 
+if ($_POST["install"] == 'true') {
     Traum_Captcha_insertsql();
-}else if($install == 'no'){
+}else if($_POST["install"] == 'no'){
     global $wpdb;
     $wpdb->query( "DROP TABLE captcha_event" );
     $wpdb->query( "DROP TABLE captcha_matrix" );
@@ -28,6 +33,7 @@ if ($install == 'true') {
 </div>
 <?php
 function Traum_Captcha_insertsql() {
+    if(current_user_can('level_10')){
         global $wpdb;
         function insert($file,$database,$name,$root,$pwd)
         {
@@ -55,4 +61,8 @@ function Traum_Captcha_insertsql() {
             $_mysqli = null;
         }
         insert(plugin_dir_path(__FILE__)."db/Captcha.sql",DB_NAME,DB_HOST,DB_USER,DB_PASSWORD);
+    }else{
+        echo '权限不足';
     }
+    
+}
