@@ -1,22 +1,14 @@
 === Plugin Name ===.
-
 Contributors: jysafe
-
 Donate link: http://www.jysafe.cn/
-
 Tags: sign up
-
 Requires at least: 4.6
-
 Tested up to: 5.0
-
 Stable tag: 4.3
-
 Requires PHP: 5.5 or later
-
 License: GPLv2 or later
-
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
 
 == Description ==
 
@@ -25,9 +17,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 == Installation ==
 
 1.启用插件
-
 2.进入插件设置页面，安装数据库
-
 3.尽情享用
 
 == Changelog ==
+

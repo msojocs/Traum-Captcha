@@ -1,11 +1,11 @@
 <?php
 defined('ABSPATH') or exit;
 
-if(!is_user_logged_in())//检测是否登录
+if(!is_user_logged_in() && !current_user_can( 'manage_options' ))//check user state&admin
  {
  return false;
  }
- 
+ else{
 if ($_POST["install"] == 'true') {
     Traum_Captcha_insertsql();
 }else if($_POST["install"] == 'no'){
@@ -14,7 +14,7 @@ if ($_POST["install"] == 'true') {
     $wpdb->query( "DROP TABLE captcha_matrix" );
     $wpdb->query( "DROP TABLE captcha_vcode" );
     echo '<div class="notice notice-success"><p>删除成功</p></div>';
-    
+    }
 }
 
 ?>
