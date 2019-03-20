@@ -6,15 +6,7 @@ if(!is_user_logged_in() && !current_user_can( 'manage_options' ))//check user st
  return false;
  }
  else{
-if ($_POST["install"] == 'true') {
-    Traum_Captcha_insertsql();
-}else if($_POST["install"] == 'no'){
-    global $wpdb;
-    $wpdb->query( "DROP TABLE captcha_event" );
-    $wpdb->query( "DROP TABLE captcha_matrix" );
-    $wpdb->query( "DROP TABLE captcha_vcode" );
-    echo '<div class="notice notice-success"><p>删除成功</p></div>';
-    }
+post_check();
 }
 
 ?>
@@ -65,4 +57,16 @@ function Traum_Captcha_insertsql() {
         echo '权限不足';
     }
     
+}
+
+function post_check(){
+        if ($_POST["install"] == 'true') {
+        Traum_Captcha_insertsql();
+    }else if($_POST["install"] == 'no'){
+        global $wpdb;
+        $wpdb->query( "DROP TABLE captcha_event" );
+        $wpdb->query( "DROP TABLE captcha_matrix" );
+        $wpdb->query( "DROP TABLE captcha_vcode" );
+        echo '<div class="notice notice-success"><p>删除成功</p></div>';
+        }
 }
