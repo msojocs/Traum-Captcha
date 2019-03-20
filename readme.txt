@@ -1,11 +1,11 @@
-=== Plugin Name ===.
+=== Traum CAPTCHA ===.
 Contributors: jysafe
 Donate link: http://www.jysafe.cn/
 Tags: sign up
-Requires at least: 4.6
+Requires at least: 5.0
 Tested up to: 5.0
 Stable tag: 4.3
-Requires PHP: 5.5 or later
+Requires PHP: 5.5 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,5 +20,15 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 2.进入插件设置页面，安装数据库
 3.尽情享用
 
-== Changelog ==
+== Frequently Asked Questions == 
+1.是否涉及敏感数据操作
+A：没有，最敏感权限是向数据库写入验证码数据
 
+ == Changelog == 
+1.0 test version
+ == Upgrade Notice == 
+none
+== Screenshots == 
+1.none
+== Changelog ==
+changlog
