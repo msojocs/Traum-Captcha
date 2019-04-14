@@ -1,7 +1,7 @@
-=== Traum Captcha ===.
+=== Traum Captcha ===
 Contributors: jysafe 
 Donate link: http://www.jysafe.cn/
-Tags: sign up
+Tags: sign up,Captcha
 Requires at least: 5.0
 Tested up to: 5.0
 Stable tag: 4.3
@@ -25,14 +25,14 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 A：没有，最敏感权限是向数据库写入验证码数据
 
 2.Why I use "https://www.chemicalbook.com/CAS/GIF/"
-A:I use it to get the chemical images.
+A:I use it to get the chemical equation images.
 About chemicalbook:https://www.chemicalbook.com/AboutUs_EN.aspx
 
- == Changelog == 
-1.0 test version
- == Upgrade Notice == 
-none
+== Upgrade Notice == 
+1.0.2 use setting api,use unique name
 == Screenshots == 
 1.none
 == Changelog ==
-changlog
+1.0.2 use setting api,use unique name
+1.0.1 add settings
+1.0 test versio
