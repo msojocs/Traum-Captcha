@@ -1,0 +1,138 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Traum Captcha\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-15 04:00+0000\n"
+"PO-Revision-Date: 2019-06-15 04:03+0000\n"
+"Last-Translator: 祭夜ゐ <1690127128@qq.com>\n"
+"Language-Team: 简体中文\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.0.4"
+
+#: options.php:8
+msgid "Traum Captcha About Page"
+msgstr "关于页面"
+
+#. line 4 of add_menu_page
+#: options.php:17 options.php:18
+msgid "Database"
+msgstr "数据库"
+
+#. Register this submenu with the menu defined above
+#. The text to the display in the browser when this menu item is active
+#: options.php:26 options.php:27
+msgid "Captcha Settings"
+msgstr "验证码设置"
+
+#. Register this submenu with the menu defined above
+#. The text to the display in the browser when this menu item is active
+#: options.php:35 options.php:36
+msgid "Update"
+msgstr "更新"
+
+#: options.php:64
+msgid "Traum Captcha Install Options"
+msgstr "Traum 验证码安装页面"
+
+#. ID used to identify this section and with which to register options
+#: options.php:94
+msgid "Traum Captcha Database Page"
+msgstr "Traum 验证码数据库页面"
+
+#. ID used to identify the field throughout the theme
+#: options.php:103
+msgid ""
+"<p>If you want use Traum Captcha ,please activate this setting and enjoy it."
+"</p>"
+msgstr "<p>如果你想要使用本验证码插件，请激活这个设置然后使用吧。</p>"
+
+#. The array of arguments to pass to the callback. In this case, just a description.
+#: options.php:108
+msgid "Activate this setting to display  ✔ and install database."
+msgstr "激活这个设置使它显示  ✔ 并自动安装数据库"
+
+#: options.php:120
+msgid ""
+"<p>This plugin include Chemical、Historical、Matrix verification code</p>\n"
+"<p>The core of plugin development is referenced to"
+msgstr ""
+"<p>这个插件包含化学、历史、矩阵验证码</p>\n"
+"<p>插件开发的核心参考于"
+
+#: options.php:137
+msgid ""
+"<h2>Traum Captcha Setting Page</h2>\n"
+"    <br>Some functions will be added future.\n"
+"    "
+msgstr ""
+"<h2>Traum验证码设置页面</h2>\n"
+"    <br>未来将会添加一些功能"
+
+#: options.php:144
+msgid "<h2>Traum Captcha Update Page</h2>"
+msgstr "<h2>Traum验证码更新页面</h2>"
+
+#: functions.php:145
+msgid "Already Installed"
+msgstr "已安装"
+
+#: functions.php:162
+msgid "Database Connect Fail"
+msgstr "数据库连接失败"
+
+#: functions.php:172
+msgid "Install Successful"
+msgstr "安装成功"
+
+#: functions.php:188
+msgid "Delete Successful"
+msgstr "删除成功"
+
+#: functions.php:190
+msgid "Uninstall"
+msgstr "未安装"
+
+#: functions.php:208
+msgid "The installed version is："
+msgstr "当前版本："
+
+#: functions.php:209
+msgid "The latest version is："
+msgstr "最新版本："
+
+#: functions.php:210
+msgid "The update description："
+msgstr "更新说明："
+
+#: functions.php:211
+msgid "The download link："
+msgstr "下载链接："
+
+#: functions.php:212
+msgid "Click to download"
+msgstr "点击下载"
+
+#. Name of the plugin
+msgid "Traum Captcha"
+msgstr "Traum验证码"
+
+#. Description of the plugin
+msgid "Chemical Captcha，Historical Captcha，Matrix Captcha"
+msgstr "化学验证码，历史验证码，矩阵验证码"
+
+#. URI of the plugin
+msgid "https://www.jysafe.cn/3571.air"
+msgstr "https://www.jysafe.cn/3571.air"
+
+#. Author of the plugin
+msgid "Traum"
+msgstr "Traum"
+
+#. Author URI of the plugin
+msgid "https://www.jysafe.cn"
+msgstr "https://www.jysafe.cn"

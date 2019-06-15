@@ -4,21 +4,17 @@
     Plugin URI: https://www.jysafe.cn/3571.air
     Description: Chemical Captcha，Historical Captcha，Matrix Captcha
     Author: Traum
-    Version: 1.0.2
+    Version: 1.0.3
     Author URI: https://www.jysafe.cn
     */
 ?>
 <?php
+$version = '1.0.3';
 require plugin_dir_path( __FILE__ ) .'options.php';
 
 // WordPress 注册表单添加验证图片
 function traum_captcha_add_security_question() {
     ?>
-    <script type="text/javascript">
-jQuery(function(){ 
-	//alert(jQuery.fn.jquery);		
-})
-</script>
     <p>
         <label>验证码(点击图像更换)</label><br><br>
         <input type="text" name="ctype" id="ts" style="display: none" value="vcode">
@@ -81,7 +77,6 @@ jQuery(function(){
     </script>
     <br />
     <?php
-
 }
 add_action('register_form', 'traum_captcha_add_security_question');
 
@@ -144,3 +139,75 @@ load_plugin_textdomain( 'Traum-Captcha', false, basename( dirname( __FILE__ ) ) 
 add_action('plugins_loaded', 'traum_captcha_plugin_languages_init');
 
 
+function Traum_Captcha_insertsql() {
+        global $wpdb;
+        if (traum_captcha_isinstall()){
+            echo('<div class="notice notice-error"><p>'.__('Already Installed', 'Traum-Captcha').'</p></div>');
+        }else {
+            traum_captcha_database_insert(plugin_dir_path(__FILE__)."db/Captcha.sql",DB_NAME,DB_HOST,DB_USER,DB_PASSWORD);
+        }
+    
+}
+
+function traum_captcha_database_insert($file,$database,$name,$root,$pwd)
+        {
+            //将表导入数据库
+            //header("Content-type: text/html; charset=utf-8");
+            $_sql = file_get_contents($file);
+            //写自己的.sql文件
+            $_arr = explode(";\n", $_sql);//此处不可修改，否则数据库可能无法成功导入
+            $_mysqli = new mysqli($name,$root,$pwd,$database);
+            //第一个参数为域名，第二个为用户名，第三个为密码，第四个为数据库名字
+            if (mysqli_connect_errno()) {
+                exit(_e('Database Connect Fail', 'Traum-Captcha'));
+            } else {
+                //执行sql语句
+                $_mysqli->query('set names utf8;');
+                //设置编码方式
+                //global $wpdb;
+                foreach ($_arr as $_value) {
+                    $_mysqli->query($_value.';');
+                   // $wpdb -> get_row($_value.';');
+                }
+                echo '<div class="notice notice-success"><p>'.__('Install Successful', 'Traum-Captcha').'</p></div>';
+            }
+            $_mysqli->close();
+            $_mysqli = null;
+}
+
+//安装或删除数据库
+function Traum_Captcha_install_check($install){
+        if ($install == 1) {
+        Traum_Captcha_insertsql();
+    }else{
+        global $wpdb;
+        if(traum_captcha_isinstall()){
+            $wpdb->query( "DROP TABLE captcha_event" );
+            $wpdb->query( "DROP TABLE captcha_matrix" );
+            $wpdb->query( "DROP TABLE captcha_vcode" );
+            echo '<div class="notice notice-success"><p>'.__('Delete Successful', 'Traum-Captcha').'</p></div>';
+        }else{
+            echo '<div class="notice notice-success"><p>'.__('Uninstall', 'Traum-Captcha').'</p></div>';
+        }
+    }
+}
+
+//检验数据库是否安装
+function traum_captcha_isinstall(){
+    global $wpdb;
+    $results1 = $wpdb -> get_row("SELECT table_name FROM information_schema.TABLES WHERE table_name ='captcha_event'");
+    $results2 = $wpdb -> get_row("SELECT table_name FROM information_schema.TABLES WHERE table_name ='captcha_matrix'");
+    $results3 = $wpdb -> get_row("SELECT table_name FROM information_schema.TABLES WHERE table_name ='captcha_vcode'");
+    return ($results1 && $results2 && $results3)? true: false;
+}
+
+function traum_captcha_update($ver){
+    $json = file_get_contents('https://api.jysafe.cn/traum_captcha_update/update.json');
+    $arr = json_decode($json,true);
+    
+    _e('The installed version is：','Traum-Captcha'); echo $ver.'<br>';
+    _e('The latest version is：','Traum-Captcha');echo $arr['ver'].'<br>';
+    _e('The update description：','Traum-Captcha');echo $arr['description'].'<br>';
+    _e('The download link：','Traum-Captcha');
+    echo "<a href=".$arr['download'].">".__('Click to download','Traum-Captcha').'</a>';
+}

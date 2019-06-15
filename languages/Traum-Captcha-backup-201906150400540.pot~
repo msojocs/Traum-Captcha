@@ -1,0 +1,105 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Traum Captcha\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-15 02:51+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.1; wp-5.0.4"
+
+#: options.php:8
+msgid "Traum Captcha About Page"
+msgstr ""
+
+#. line 4 of add_menu_page
+#: options.php:16 options.php:17
+msgid "Database"
+msgstr ""
+
+#. Register this submenu with the menu defined above
+#. The text to the display in the browser when this menu item is active
+#: options.php:24 options.php:25
+msgid "Captcha Settings"
+msgstr ""
+
+#: options.php:55
+msgid "Traum Captcha Install Options"
+msgstr ""
+
+#. ID used to identify this section and with which to register options
+#: options.php:85
+msgid "Traum Captcha Database Page"
+msgstr ""
+
+#. ID used to identify the field throughout the theme
+#: options.php:94
+msgid ""
+"<p>If you want use Traum Captcha ,please activate this setting and enjoy it."
+"</p>"
+msgstr ""
+
+#. The array of arguments to pass to the callback. In this case, just a description.
+#: options.php:99
+msgid "Activate this setting to display  ✔ and install database."
+msgstr ""
+
+#: options.php:113
+msgid ""
+"<p>This plugin include Chemical、Historical、Matrix verification code</p>\n"
+"<p>The core of plugin development is referenced to"
+msgstr ""
+
+#: options.php:131
+msgid ""
+"<h2>Traum Captcha Setting Page</h2>\n"
+"    <br>Some functions will be added future.\n"
+"    "
+msgstr ""
+
+#: options.php:140
+msgid "Already Installed"
+msgstr ""
+
+#: options.php:157
+msgid "Database Connect Fail"
+msgstr ""
+
+#: options.php:167
+msgid "Install Successful"
+msgstr ""
+
+#: options.php:183
+msgid "Delete Successful"
+msgstr ""
+
+#: options.php:185
+msgid "Uninstall"
+msgstr ""
+
+#. Name of the plugin
+msgid "Traum Captcha"
+msgstr ""
+
+#. Description of the plugin
+msgid "Chemical Captcha，Historical Captcha，Matrix Captcha"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://www.jysafe.cn/3571.air"
+msgstr ""
+
+#. Author of the plugin
+msgid "Traum"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.jysafe.cn"
+msgstr ""
