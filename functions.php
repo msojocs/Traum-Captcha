@@ -202,8 +202,8 @@ function traum_captcha_isinstall(){
 }
 
 function traum_captcha_update($ver){
-    $json = file_get_contents('https://api.jysafe.cn/traum_captcha_update/update.json');
-    $arr = json_decode($json,true);
+    $json = wp_remote_get('https://api.jysafe.cn/update/?type=captcha');
+    $arr = json_decode($json['body'],true);
     
     _e('The installed version is：','Traum-Captcha'); echo $ver.'<br>';
     _e('The latest version is：','Traum-Captcha');echo $arr['ver'].'<br>';
