@@ -4,12 +4,15 @@
     Plugin URI: https://www.jysafe.cn/3571.air
     Description: Chemical Captcha，Historical Captcha，Matrix Captcha
     Author: Traum
-    Version: 1.0.3
+    Version: 1.0.4
     Author URI: https://www.jysafe.cn
     */
 ?>
 <?php
-$version = '1.0.3';
+if (!defined('Traum_Captcha_VER')) {
+    define('Traum_Captcha_VER', '1.0.4');
+}
+
 require plugin_dir_path( __FILE__ ) .'options.php';
 
 // WordPress 注册表单添加验证图片

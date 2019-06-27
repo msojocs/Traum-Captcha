@@ -140,8 +140,7 @@ function traum_captcha_setting_display(){
 }
 
 function traum_captcha_update_display(){
-    global $version;
     _e('<h2>Traum Captcha Update Page</h2>','Traum-Captcha');
-    traum_captcha_update($version);
+    traum_captcha_update(Traum_Captcha_VER);
 }
 //Setting end

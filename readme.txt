@@ -3,7 +3,7 @@ Contributors: jysafe
 Donate link: http://www.jysafe.cn/
 Tags: sign up,Captcha
 Requires at least: 5.0
-Tested up to: 5.0
+Tested up to: 5.2.2
 Stable tag: 4.3
 Requires PHP: 5.5 
 License: GPLv2 or later
@@ -53,9 +53,9 @@ A:I use it to get the latest version including the test version.
 
 == Upgrade Notice == 
 CN:
-1.0.3   修复数据库特定情况下写入失败的问题，优化部分处理逻辑，更新翻译。
+1.0.4   增加卸载功能，优化代码。
 EN:
-1.0.3   Fix a problem that sometimes writing database may fail，Optimize partial processing logic，update translate。
+1.0.4   Add new functions.Fix some problems.
 
 == Screenshots == 
 1.none
