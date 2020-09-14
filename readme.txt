@@ -4,7 +4,7 @@ Donate link: http://www.jysafe.cn/
 Tags: sign up,Captcha
 Requires at least: 5.0
 Tested up to: 5.2.2
-Stable tag: 4.3
+Stable tag: 1.0.4
 Requires PHP: 5.5 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

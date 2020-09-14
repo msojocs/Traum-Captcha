@@ -119,7 +119,7 @@ function traum_captcha() {
     session_start();
     include_once('src/Box.php');
     include_once('src/Color.php');
-    include_once('process.class.php');
+    include_once('src/process.class.php');
     $traum_captcha = new Traum_captcha();
     $traum_captcha_type = $_GET['traum_captcha_type'];
     $traum_captcha -> $traum_captcha_type();
@@ -137,7 +137,7 @@ add_action('init','traum_captcha_init');
 
 // 多语言
 function traum_captcha_plugin_languages_init(){
-load_plugin_textdomain( 'Traum-Captcha', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+    load_plugin_textdomain( 'Traum-Captcha', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
 add_action('plugins_loaded', 'traum_captcha_plugin_languages_init');
 
@@ -202,15 +202,4 @@ function traum_captcha_isinstall(){
     $results2 = $wpdb -> get_row("SELECT table_name FROM information_schema.TABLES WHERE table_name ='captcha_matrix'");
     $results3 = $wpdb -> get_row("SELECT table_name FROM information_schema.TABLES WHERE table_name ='captcha_vcode'");
     return ($results1 && $results2 && $results3)? true: false;
-}
-
-function traum_captcha_update($ver){
-    $json = wp_remote_get('https://api.jysafe.cn/update/?type=captcha');
-    $arr = json_decode($json['body'],true);
-    
-    _e('The installed version is：','Traum-Captcha'); echo $ver.'<br>';
-    _e('The latest version is：','Traum-Captcha');echo $arr['ver'].'<br>';
-    _e('The update description：','Traum-Captcha');echo $arr['description'].'<br>';
-    _e('The download link：','Traum-Captcha');
-    echo "<a href=".$arr['download'].">".__('Click to download','Traum-Captcha').'</a>';
 }

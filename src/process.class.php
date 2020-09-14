@@ -54,7 +54,7 @@ class Traum_captcha {
         $backgroundColor = imagecolorallocate($im, 255, 255, 255);
         imagefill($im, 0, 0, $backgroundColor);
         $box = new Box($im);
-        $box->setFontFace(plugin_dir_path(__FILE__).'assets/fonts/fz.otf');
+        $box->setFontFace(plugin_dir_path(__FILE__).'../assets/fonts/fz.otf');
         //受freetype版本限制，字体文件不能过大
         $box->setFontColor(new Color(0, 0, 0));
         $box->setTextShadow(new Color(0, 0, 0, 50), 0, 0);
@@ -73,11 +73,11 @@ class Traum_captcha {
 
     public function Matrix() {
         global $wpdb;
-        $image = imagecreatefrompng(plugin_dir_path(__FILE__)."assets/img/bg.png");
+        $image = imagecreatefrompng(plugin_dir_path(__FILE__)."../assets/img/bg.png");
         $black = imagecolorallocate($image, 0, 0, 0);
         $id = rand(1,22523);
         $size = 22;
-        $font = plugin_dir_path(__FILE__).'assets/fonts/fz.otf';
+        $font = plugin_dir_path(__FILE__).'../assets/fonts/fz.otf';
         $text = "1";
         $results1 = $wpdb -> get_row("SELECT * FROM `captcha_matrix` WHERE `id` =$id", ARRAY_A);
         $m1 = $results1['m1'];
