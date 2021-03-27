@@ -37,7 +37,7 @@ function traum_captcha_add_security_question() {
             <div class="form-group label-floating is-empty">
                 <label class="control-label" for="focusedInput1">请输入上图事件发生日期</label>
                 <input class="form-control" name="vcode1" id="vcode1" type="text">
-                <label>格式例如：19890604，公元前请加“-”表示</label>
+                <label>格式例如：20010101，公元前请加“-”表示</label>
             </div>
         </div>
         <div id="jz" style="display:none;">
